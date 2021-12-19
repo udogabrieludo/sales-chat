@@ -14,7 +14,7 @@ import {
     Legend,
   } from 'chart.js'
 
-const BarChart = ({salesData, monthlyProfit}) => {
+const BarChart = ({salesData, monthlyProfit, totalDiscount}) => {
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -52,6 +52,30 @@ const BarChart = ({salesData, monthlyProfit}) => {
                 'rgb(54, 162, 235)',
                 'rgb(153, 102, 255)',
                 'rgb(201, 203, 207)'
+              ],
+              borderWidth: 1
+            },
+            {
+              label: 'Discount Given',
+            
+              data: totalDiscount,
+              backgroundColor: [
+                'rgba(112, 139, 012, 0.2)',
+                'rgba(025, 020, 124, 0.2)',
+                'rgba(125, 201, 186, 0.2)',
+                'rgba(115, 102, 112, 0.2)',
+                'rgba(105, 112, 120, 0.2)',
+                'rgba(207, 002, 155, 0.2)',
+                'rgba(101, 103, 007, 0.2)'
+              ],
+              borderColor: [
+                'rgba(112, 139, 012)',
+                'rgba(025, 020, 124)',
+                'rgba(125, 201, 186)',
+                'rgba(115, 102, 112)',
+                'rgba(105, 112, 120)',
+                'rgba(207, 002, 155)',
+                'rgba(101, 103, 007)'
               ],
               borderWidth: 1
             },

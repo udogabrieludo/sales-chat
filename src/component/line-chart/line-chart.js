@@ -1,7 +1,7 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2';
 
-const LineChart = ({salesData, monthlyProfit}) => {
+const LineChart = ({salesData, monthlyProfit, totalDiscount}) => {
 
  
     const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -20,6 +20,13 @@ const LineChart = ({salesData, monthlyProfit}) => {
             data: monthlyProfit,
             fill: false,
             borderColor: 'green',
+            tension: 0.1
+        },
+        {
+            label: 'Discount Given',
+            data: totalDiscount,
+            fill: false,
+            borderColor: 'red',
             tension: 0.1
         },
        

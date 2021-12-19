@@ -4,9 +4,10 @@ import PieChart from '../component/pie-chart/pie-chart';
 import LineChart from '../component/line-chart/line-chart';
 import StackBarChart from '../component/stack-bar/stack-bar';
 import { years } from '../fixtures';
+import Table from '../component/table/table';
 
  
-const ChartComponent = ({ salesData, monthlyProfit, handleChange, filterDate }) => {
+const ChartComponent = ({ salesData, monthlyProfit,totalDiscount, handleChange, filterDate }) => {
 
   return (  
 
@@ -20,7 +21,7 @@ const ChartComponent = ({ salesData, monthlyProfit, handleChange, filterDate }) 
 
       <div className='column'>
         <div className='inner-column'>
-          <LineChart salesData={salesData} monthlyProfit={monthlyProfit} />
+          <LineChart salesData={salesData} monthlyProfit={monthlyProfit} totalDiscount={totalDiscount}/>
         </div>
 
         <div className='inner-column'>
@@ -30,11 +31,12 @@ const ChartComponent = ({ salesData, monthlyProfit, handleChange, filterDate }) 
      
       <div  className='column'>
       <div  className='inner-column'>
-        <BarChart salesData={salesData} monthlyProfit={monthlyProfit} />
+        <BarChart salesData={salesData} monthlyProfit={monthlyProfit} totalDiscount={totalDiscount}/>
       </div>
       <div  className='inner-column'>
-        <StackBarChart salesData={salesData} monthlyProfit={monthlyProfit} />
-      </div>
+        <h3>{filterDate} Sales Report</h3>
+           <Table salesData={salesData} monthlyProfit={monthlyProfit} totalDiscount={totalDiscount}/>
+        </div>
       </div>
       
     </div>
